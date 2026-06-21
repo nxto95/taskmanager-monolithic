@@ -6,12 +6,14 @@ import { AuthModule } from './modules/auth/auth.module';
 import { TaskmanagerModule } from './modules/taskmanager/taskmanager.module';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { ConfigModule } from '@nestjs/config';
+import { PostgresModule } from './config/databases/postgreas.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
     }),
+    PostgresModule,
     UsersModule,
     AuthModule,
     TaskmanagerModule,
